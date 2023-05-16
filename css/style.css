@@ -1,0 +1,1221 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary:#69a4cc;
+    --color-light-blue: #33adff;
+    --color-lighter-blue: #33adff;
+    --color-pink: #ff33cc;
+    --color-success: #00bf8e;
+    --color-warning: #f7c94b;
+    --color-danger: #f75842;
+    --color-danger-variant: rgba(247, 88, 66, 0.7);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: rgb(25, 25, 26);
+    --color-bg0: #1f2641;
+    --color-bg: #101b27;
+    --color-bg1: #0e264b;
+    --color-bg2: #344b6d;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transition: all 400ms ease;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    color: var(--color-white);
+    background: linear-gradient(-60deg, var(--color-light-blue),  var(--color-bg0));
+    scroll-behavior: smooth;
+}
+
+.container{
+    width: var(--container-width-lg);
+    margin: auto;
+}
+
+section{
+    padding: 6rem 0;
+}
+
+section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6,
+h5{
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 2.4rem;
+    
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1.6rem;
+}
+
+h4{
+    font-size: 1.3rem;
+}
+
+h6{
+    font-size: 2.3rem;
+}
+
+a{
+    color: var(--color-white);
+}
+
+a h6{
+    color: #f7c94b;
+}
+
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.btn{
+    display: inline-block;
+    background: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn:hover{
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-primary{
+    background: var(--color-danger);
+    color: var(--color-);
+}
+
+/*=========== NAVBAR ===========*/
+nav{
+    background: transparent;
+    width: 100vw;
+    height: 4rem;
+    position: fixed;
+    top: 1rem;
+    z-index: 11;
+}
+
+.nav::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+
+/*change the navbar style on scroll using javaScript*/
+.window-scroll{
+    background: var(--color-primary);
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.nav__container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__container h1{
+    font-size: 0.7rem;
+    position: absolute;
+    text-align: center;
+    margin-left: -10px;
+}
+
+nav button{
+    display: none;
+}
+
+.nav__menu{
+    float: right;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav__menu li{
+    float: left;
+    display: inline-block;
+}
+
+/*sub-categories of about*/
+
+.nav__menu ul{
+    position: absolute;
+    top: 3.5rem;
+    left: 29%;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.nav__menu li:hover > ul{
+    top: 3rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav__menu li:hover > ul::after{
+    display: none ;
+}
+
+.nav__menu ul li a{
+    padding: 1rem;
+    background: var(--color-primary);
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+    margin-top: 2px;
+    width: 100%;
+    display: block;
+}
+
+.nav__menu ul li a:hover{
+    background: var(--color-bg1);
+}
+/* End of the sub-categories of about */
+
+.nav__menu a{
+    font-size: 0.9rem;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.nav__menu a:hover{
+    color: var(--color-warning);
+}
+
+.btn1{
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: 0.4ms ease-in-out;
+    text-decoration: none;
+}
+
+.btn1:hover{
+    background-color: transparent;
+    border: 2px solid;
+    border-color: var(--color-warning);
+}
+
+/*=========== END OF THE NAV BAR ===========*/
+
+
+
+/*=========== HEADER ===========*/
+
+header{
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 5rem;
+    height: 32rem;
+}
+
+.header__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*header__container devided into two columns*/
+    align-items: center;
+    gap: 5rem;
+    height: 100%;
+    margin-top: 2rem;
+}
+
+.header__left p{
+    margin: 2.2rem 0 2.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header__left a{
+    margin-top: 2rem;
+}
+
+/*=========== END OF THR HEADER ===========*/
+
+/*=========== USELESS SECTION ===========*/
+
+.container__useless{
+    background: transparent;
+    height: 6rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0%;
+}
+
+/*=========== END OF THE USELESS SECTION ===========*/
+
+/*=========== SERVICES ===========*/
+
+.services{
+    background: var(--color-bg1);
+    height: 32rem;
+    box-shadow: 4rem 0 4rem 0 rgba(0, 0, 0, 0.6);
+    margin-top: -5.9rem;
+}
+
+.services h1{
+    line-height: 1;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.services__container{
+    display: grid;
+    grid-template-columns: 40% 60%; /*divide the section into two columns*/
+}
+
+.services__left{
+    margin-right: 4rem;
+}
+
+.services__left p{
+    margin: 1rem 0 3rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.services__right{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.article__service{
+    background: var(--color-bg2);
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+}
+
+.article__service:hover{
+    box-shadow: 0 3rem 3rem rgba(0,0,0,0.5);
+    
+}
+
+.article__service:nth-child(2) .services__icon{
+    background: var(--color-danger);
+}
+
+.article__service:nth-child(1) .services__icon{
+    background: var(--color-success);
+}
+
+.article__service:nth-child(3) .services__icon{
+    background: var(--color-warning);
+}
+
+.article__service:nth-child(4) .services__icon{
+    background: var(--color-pink);
+}
+
+.services__icon{
+    background: var(--color-primary);
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+
+.article__service h5{
+    margin: 2rem 0 1rem;
+    font-size: 1rem;
+}
+
+.article__service p{
+    font-size: 0.85rem;
+}
+
+/*=========== END OF THE SERVICES SECTION ===========*/
+
+
+/*=========== USELESS SECTION 5 ===========*/
+
+.container__useless5{
+    background: transparent;
+    height: 6rem;
+    width: 100%;
+    margin-top: 8rem;
+}
+
+/*=========== END OF THE USELESS SECTION 5 ===========*/
+
+/*=========== FAQs ===========*/
+
+.faqs{
+    background: transparent;
+    height: 59rem;
+}
+
+.faqs .container{
+    margin-top: -8rem;
+}
+
+.faqs h1{
+    line-height: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.faqs p{
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.faq__container{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.left__faq{
+    margin-left: -5rem;
+    margin-right: 1rem;
+}
+
+.right__faq{
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-right: 0px;
+}
+
+.faq{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    height: fit-content;
+    background: var(--color-danger-variant);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.faq h4{
+    font-size: 1rem;
+    line-height: 2.2;
+}
+
+.faq__icons{
+    align-self: flex-start;
+    font-size: 1.2rem;
+}
+
+.faq p{
+    text-align: justify;
+    margin-top: 0.8rem;
+    margin-right: 1rem;
+    color: var(--color-white);
+    display: none;
+}
+
+.faq.open p{
+    display: block;
+}
+
+.faq.close p{
+    display: none;
+}
+
+.faq__icons{
+    transition: var(--transition);
+}
+
+
+/*===========End of FAQs ===========*/
+
+/*=========== USELESS SECTION 2 ===========*/
+
+.container__useless2{
+    background: transparent;
+    height: 6.5rem;
+    margin-top: -7rem;
+}
+
+/*=========== END OF THE USELESS SECTION 2 ===========*/
+
+
+
+/*=========== Introduction ===========*/
+
+.introduction{
+    background: var(--color-bg1);
+    height: 28rem;
+    box-shadow: 4rem 0 4rem 0 rgba(0, 0, 0, 0.6);
+    margin-top: -5.9rem;
+}
+
+.introduction h1{
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.introduction p{
+    text-align: center;
+    margin: 2rem 4rem 4rem;
+}
+
+/*=========== End of Introduction ===========*/
+
+/*=========== USELESS SECTION 3 ===========*/
+
+.container__useless3{
+    background: transparent;
+    height: 6.5rem;
+    margin-top: -7rem;
+}
+
+/*=========== END OF THE USELESS SECTION 3 ===========*/
+
+/*=========== About Achievements ===========*/
+
+.about__achievement{
+    margin-top: -9rem;
+}
+
+.about__achievement-container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 5rem;
+}
+
+.left-achievement h1{
+    line-height: 1;
+    text-align: left;
+}
+
+.left-achievement > p{
+    margin: 2rem 0 3rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.achievement__cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 25rem;
+    height: 12rem;
+    gap: 1.5rem;
+}
+
+.card{
+    background: var(--color-bg2);
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.card:hover{
+    background: var(--color-bg2);
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3); 
+}
+
+.card p{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.card:hover{
+background: var(--color-bg2);
+box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3); 
+}
+
+.achievement__icon{
+    background: var(--color-warning);
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 1.2rem;
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card:nth-child(2) .achievement__icon{
+    background: var(--color-danger);
+}
+
+/*=========== End of About Achievements ===========*/
+
+/*=========== USELESS SECTION 4 ===========*/
+
+.container__useless4{
+    background: transparent;
+    height: 6.5rem;
+    margin-top: 1rem;
+}
+
+/*=========== END OF THE USELESS SECTION 4 ===========*/
+
+
+/*=========== Contact Section ===========*/
+
+.contact__conatiner{
+    background: var(--color-bg1);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 4rem;
+    height: 30rem;
+    margin: -6rem auto;
+    border-radius: 2rem;
+}
+
+.contact__aside{
+    background: var(--color-bg2);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 3rem 3rem rgba(0,0,0,0.5);
+    position: relative;
+    bottom: 10rem;
+}
+
+.aside__image{
+    width: 12rem;
+    margin: auto;
+}
+
+.contact__aside h2{
+    text-align: center;
+    margin: 1rem 0 1rem;
+}
+
+.contact__aside p{
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.contact__details li{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact__socials{
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.contact__socials a{
+    background: var(--color-bg1);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.contact__socials a:hover{
+    background: transparent;
+}
+
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-right: 4rem;
+}
+
+.form__name{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact__form input[type="text"]{
+    width: 50%;
+}
+
+input,
+textarea{
+    width: 100%;
+    padding: 1rem;
+    background: var(--color-bg);
+    color: var(--color-white);
+}
+
+.contact__form .btn{
+    width: max-content; 
+    align-self: flex-end;
+    cursor: pointer;
+}
+/*=========== End of Contact Section ===========*/
+
+
+/*=========== Footer ===========*/
+
+footer{
+    background: var(--color-black);
+    padding: 4rem 0 3.2rem;
+    font-size: 0.9rem;
+    margin-top: 27rem;
+    box-shadow: inset 0 1.5rem 1.5rem rgba(100, 86, 86, 0.2);
+}
+
+.footer__container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5rem;
+}
+
+.footer__container > div h4{
+    margin-bottom: 1.2rem;
+}
+
+.footer__1 h4{
+    color: var(--color-warning);
+}
+
+footer ul li{
+    margin-bottom: 0.7rem;
+}
+
+footer ul li a:hover{
+    text-decoration: underline;
+    color: var(--color-danger);
+}
+
+.footer__4 li{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.footer__socials{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    transition: var(--transition);
+}
+
+.footer__socials a{
+    background: var(--color-bg1);
+    padding: 0.3rem;
+    border-radius: 40%;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer__socials a:hover{
+    background: transparent;
+}
+/*=========== END OF THE FOOTER ===========*/
+
+
+
+/*=========== @Media Queries (Tablets)===========*/
+
+    @media screen and (max-width:1024px){
+        .container{
+
+            width: 100wh;
+        }
+
+        h1{
+            font-size: 2rem;
+        }
+        h2{
+            font-size: 1.7rem;
+        }
+        h3{
+            font-size: 1.4rem;
+        }
+        h4{
+            font-size: 1.2rem;
+        }
+        h6{
+            font-size: 1.9rem;
+        }
+
+        .btn{
+            font-weight: 450;
+            padding: 0.8rem 1.5rem;
+        }
+
+        /*=========== Navbar ===========*/
+        nav{
+            width: 100vw;
+            height: 3rem;
+            position: fixed;
+            top: 0.8rem;
+        }
+        
+        nav button{
+            display: inline-block;
+            background: transparent;
+            font-size: 1.8rem;
+            color: var(--color-white);
+            cursor: pointer;
+        }
+
+        nav button#close-menu-btn{
+            display: none;
+        }
+
+        .nav__menu{
+            position: fixed;
+            top: 5rem;
+            right: 5%;
+            height: fit-content;
+            width: 15rem;
+            flex-direction: column;
+            box-shadow: auto 0 3rem 3rem rgba(0,0,0,0.5);
+            gap: 0;
+            display: none;
+        }
+
+        .nav__menu li .btn1, .btn2{
+            display: contents;
+        }
+
+        .nav__menu li{
+            background: var(--color-primary);
+            box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+            border-radius: 0.5rem;
+            width: 70%; 
+            height: 4.5rem;
+            display: grid;
+            place-items: center;
+            margin-top: 2px;
+            animation: animateNavitems 400ms linear forwards;
+            transform-origin: top right;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .nav__menu li:nth-child(2){
+            animation-delay: 100ms;
+        }  
+        .nav__menu li:nth-child(3){
+            animation-delay: 200ms;
+        }    
+        .nav__menu li:nth-child(4){
+            animation-delay: 300ms;
+        }  
+        .nav__menu li:nth-child(5){
+            animation-delay: 400ms;
+        } 
+        .nav__menu li:nth-child(6){
+            animation-delay: 500ms;
+        }  
+
+        @keyframes animateNavitems {
+            0% {
+                transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+            }
+            100% {
+                transform: rotateZ(0) rotateX(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .nav__menu li:hover{
+            background: var(--color-bg2); 
+        }
+
+        .nav__menu ul{
+            width: 100%;
+        }
+
+        .nav__menu ul li{
+            position: relative;
+            width: 100%;       
+            right: 13.6rem;   
+            top: 1.5rem; 
+            margin-top: 2px;
+            text-align: center;
+        }
+
+        .nav__menu ul li a{
+            background: var(--color-primary);
+            height: 100%;
+            border-radius: 0.5rem;
+        }
+
+        .nav__menu ul li a:hover{
+            background: var(--color-bg2);
+        }
+/*
+        .nav__menu ul li{
+            background: var(--color-primary);
+            position: relative;
+            width: 90%;
+            display: grid;
+            right: 15rem;
+            margin-top: 0rem;
+            border-left: none;
+        }
+
+        .nav__menu li:hover > ul{
+            top: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+*/
+
+        /*=========== header ===========*/
+
+        header{
+            height: auto;
+            margin-bottom: 4rem;
+        }
+
+        .header__container{
+            gap: 0.5rem;
+            padding-bottom: 1rem;
+        }
+
+
+        /*=========== services ===========*/
+        .services{
+            height: auto;
+        }
+
+        .services__container{
+            grid-template-columns: 1fr;
+            gap: 5rem;
+            margin-top: -4rem;
+        }
+
+        .services__left{
+            margin: 0 1rem 0 1rem;
+        }
+
+        .services__left h1, p{
+            margin-bottom: 1rem;
+        }
+
+        .services__left a{
+            margin-top: -2rem;
+        }
+
+        .services__left btn{
+            margin-top: -0.5rem;
+        }
+
+        .services__right{
+            margin-top: -2rem;
+        }
+
+
+        .container__useless5{
+            margin-top: -4rem;
+        }
+        /*=========== FAQs ===========*/
+
+        .faqs{
+            height: auto;
+            margin-top: -2rem;
+        }
+
+        .faq__container{
+            padding: 0.5rem;
+        }
+
+        .left__faq{
+            margin-left: 0rem;
+            margin-top: 6rem;
+        }
+
+        /*=========== introduction ===========*/
+        .introduction {
+            height: auto;
+        }
+
+        .container__intro p{
+            margin-bottom: -1rem;
+        }
+
+        /*=========== achievement ===========*/
+        .about__achievement{
+            height: auto;
+        }
+
+        .about__achievement-container{
+            gap: 1.2rem;
+        }
+
+        /*=========== Footer ===========*/
+        .footer__container{
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer__4 li{
+            margin-bottom: -1rem;
+        }  
+
+        /*=========== Contact ===========*/
+        .contact__conatiner{
+            height: auto;
+            margin-top: -11rem;
+            margin-bottom: -12rem;
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .contact__aside{
+            width: auto;
+            padding: 1rem;
+            bottom: 0;           
+        }
+
+        .aside__image{
+            width: auto;
+        }
+
+        .contact__form{
+            align-self: center;
+            margin-right: 1.5rem;
+        }
+
+        .contact__details li{
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        
+    }
+/*=========== End of the @Media Queries ===========*/
+
+
+/*=========== @Media Queries (Phones)===========*/
+
+@media screen and (max-width: 600px){
+
+    .container{
+        max-width: 100%;
+        overflow: hidden;
+    }
+    /*=========== Navbar ===========*/
+    nav{
+        width: 100vw;
+        height: 3rem;
+        position: fixed;
+        top: 0.8rem;
+    }
+
+    .nav__menu ul{
+        width: 100%;
+    }
+
+    .nav__menu ul li{
+        width: 100%;
+        right: 13.6rem;
+    }
+    
+
+    /*=========== header ===========*/
+    .header__container{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    
+    .header__container h1{
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    
+    .header__container p{
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 17rem;
+    }
+
+    .header__right-image{
+        width: 70%;
+        margin: 0 auto;
+        margin-top: -21rem;
+    }
+
+    .btn{
+        padding: 0.5rem 1rem;
+        float: right;
+    }
+
+    .container__useless{
+        background-color: transparent;
+        margin-top: -7rem;
+        height: 3rem;
+    }
+
+    /*=========== Services ===========*/
+    .services{
+        margin-top: -8rem;
+    }
+    .services__container{
+        margin-bottom: -2rem;
+    }
+    .services__left .btn{
+        padding: 0.5rem 1rem;
+    }
+
+    .services__left p{
+        margin-bottom: 3.5rem;
+    }
+
+    .article__service{
+        padding: 1rem;
+    }
+
+    /*=========== FAQs ===========*/
+    .faq__container{
+        grid-template-columns: 1fr;
+        margin-top: -8rem;
+    }
+
+    .left__faq img{
+        width: 80%;
+        margin: auto;
+    }
+
+    .right__faq{
+        padding: 0.2rem;
+    }
+
+    .container__useless2{
+        background-color: transparent;
+        margin-top: -12rem;
+        width: 100%;
+        height: 5rem;
+    }
+
+    /*=========== Introduction ===========*/
+    .introduction{
+        margin-top: -11rem;
+    }
+
+    .container__intro p{
+        margin: auto;
+    }
+
+    /*=========== Achievements ===========*/
+    .about__achievement-container{
+        grid-template-columns: 1fr;
+        margin-top: -3rem;
+    }
+
+    .left-achievement h1{
+        text-align: center;
+    }
+
+    .left-achievement p {
+        text-align: center;
+    }
+
+    .achievement__icon{
+        font-size: 1.5rem;
+    }
+    
+    .right-achievement img{
+        display: none;
+    }
+
+    .achievement__cards{
+        width: 20rem;
+        margin: auto;
+    }
+
+    /*=========== contact ===========*/
+    .container__useless4{
+        background-color: transparent;
+        height: 6rem;
+        width: 100%;
+        margin-top: -8rem;
+    }
+
+    .contact__conatiner{
+        margin-top: -13rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact__aside{
+        box-shadow: 0 1rem 1rem rgba(0,0,0,0.1);
+    }
+
+    input, textarea{
+        padding: 0.5rem;
+    }
+
+    .form__name{
+        flex-direction: column;
+    }
+
+    .form__name input[type="text"]{
+        width: 100%;
+    }
+
+
+    /*=========== Footer ===========*/
+    footer{
+        margin-top: 13rem;
+    }    
+}
+/*=========== End of the @Media Queries ===========*/
+
+
+/*=========== @Media Queries (Phones)===========*/
+
+@media screen and (max-width: 430px){
+   
+    .header__container p{
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 12rem;
+    }
+
+    .header__right-image{
+        width: 70%;
+        margin: 0 auto;
+        margin-top: -17rem;
+    }
+
+    .btn{
+        font-size: smaller;
+        padding: 0.3rem 0.8rem;
+        float: right;
+    }
+}
